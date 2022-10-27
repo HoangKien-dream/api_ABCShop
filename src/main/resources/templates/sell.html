@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<div class="w3-card-4">
+  <div class="w3-container w3-brown">
+    <h2>Update User</h2>
+  </div>
+  <form class="w3-container" action="/sellProduct" method="post">
+      <label class="w3-text-brown"><b>Name</b></label>
+      <select name="id" >
+        <option th:each="product : ${products}" th:value = "${product.id}" th:text = "${product.name}"></option>
+      </select>
+     <label>Số Lượng mua</label>
+     <input name="quantity" type="number"/>
+      <button class="w3-btn w3-brown" type="submit">Sell</button></p>
+  </form>
+</div>
+
+</body>
+</html>
