@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html>
 <title>W3.CSS</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <body>
-
-<div class="w3-card-4">
-  <div class="w3-container w3-brown">
-    <h2>Update User</h2>
+<div class="container-fluid" style="margin-top: 20px;">
+  <div style="text-align: center">
+    <h2>Sell Product</h2>
   </div>
-  <form class="w3-container" action="/sellProduct" method="post">
-      <label class="w3-text-brown"><b>Name</b></label>
-      <select name="id" >
-        <option th:each="product : ${products}" th:value = "${product.id}" th:text = "${product.name}"></option>
-      </select>
-     <label>Số Lượng mua</label>
-     <input name="quantity" type="number"/>
-      <button class="w3-btn w3-brown" type="submit">Sell</button></p>
-  </form>
+   <div style="margin:0 634px; border: 1px solid deepskyblue;border-radius: 5px">
+       <form class="w3-container" action="/sellProduct" method="post">
+           <label class="w3-text-brown"><b>Name</b></label>
+           <select class="form-select" name="id" >
+               <option th:each="product : ${products}" th:value = "${product.id}" th:text = "${product.name}"></option>
+           </select>
+           <label class="form-label"><b>Số Lượng mua</b></label>
+           <input name="quantity" class="form-control" type="number"/>
+           <div style="margin-top: 10px;" >
+               <button class="btn btn-primary " type="submit">Sell</button></p>
+           </div>
+       </form>
+   </div>
 </div>
-
 </body>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </html>

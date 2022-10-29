@@ -68,7 +68,10 @@ public class ProductController {
     @PostMapping(value = "/sellProduct")
     public String sell(@RequestParam int id, @RequestParam int quantity){
         Client client = createJerseyRestClient();
-        WebTarget target = client.target(REST_API_SELL+"id= "+id+"&quantity= "+quantity);
+        System.out.println(REST_API_SELL+"id="+id+"&quantity="+quantity);
+        WebTarget target = client.target(REST_API_SELL+"id="+id+"&quantity="+quantity);
+        target.request(MediaType.APPLICATION_JSON_TYPE)
+                .post(Entity.entity(null,MediaType.APPLICATION_JSON));
         return "redirect:/getProducts";
     }
     @GetMapping(value = "formCreate")
